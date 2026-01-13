@@ -1,4 +1,5 @@
 import { useOutletContext } from "react-router";
+import CartItem from "./CartItem";
 
 export default function Cart() {
   const { cart } = useOutletContext();
@@ -10,10 +11,7 @@ export default function Cart() {
       ) : (
         <div className="cart-list">
           {cart.map((item) => (
-            <div className="cart-item">
-              <p>{item.title}</p>
-              <p>{item.qty}</p>
-            </div>
+            <CartItem key={item.id} itemInfo={item} />
           ))}
         </div>
       )}
