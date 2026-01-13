@@ -19,7 +19,7 @@ function ShopPage() {
         <ItemCard
           key={itemInfo.id}
           itemInfo={itemInfo}
-          onAddToCart={() => addToCart(itemInfo)}
+          onAddToCart={addToCart}
         />
       ))}
     </div>

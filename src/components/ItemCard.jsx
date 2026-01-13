@@ -33,7 +33,9 @@ function ItemCard({ itemInfo, onAddToCart }) {
         ></input>
         <button onClick={decrementCount}>-</button>
       </div>
-      <button onClick={onAddToCart}>Add To Cart</button>
+      <button onClick={() => onAddToCart(itemInfo, itemCount)}>
+        Add To Cart
+      </button>
     </div>
   );
 }
