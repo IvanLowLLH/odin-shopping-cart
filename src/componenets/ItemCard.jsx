@@ -1,11 +1,15 @@
+import styles from "./ItemCard.module.css";
+
 function ItemCard({ itemInfo }) {
   return (
-    <div className="item-card">
-      <div className="img-card-container">
+    <div className={styles["item-card"]}>
+      <div className={styles["img-card-container"]}>
         <img src={itemInfo.image} />
       </div>
-      <h1>{itemInfo.title}</h1>
-      <p>${itemInfo.price}</p>
+      <div className={styles["item-info"]}>
+        <h1 className={styles["item-title"]}>{itemInfo.title}</h1>
+        <p className={styles["item-price"]}>${itemInfo.price}</p>
+      </div>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import ItemCard from "./ItemCard";
+import styles from "./Shop.module.css";
 
 function ShopPage() {
   const [itemList, setItemList] = useState([]);
@@ -8,12 +9,12 @@ function ShopPage() {
     fetch("https://fakestoreapi.com/products")
       .then((response) => response.json())
       .then((data) => setItemList(data));
-  });
+  }, []);
 
   return (
-    <div className="item-grid">
+    <div className={styles["item-grid"]}>
       {itemList.map((itemInfo) => (
-        <ItemCard itemInfo={itemInfo} />
+        <ItemCard key={itemInfo.id} itemInfo={itemInfo} />
       ))}
     </div>
   );
