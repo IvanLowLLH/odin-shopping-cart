@@ -1,12 +1,14 @@
-import { useState } from "react";
 import "./App.css";
-import ShopPage from "./componenets/Shop";
-function App() {
-  const [count, setCount] = useState(0);
+import NavBar from "./components/NavBar";
+import { Outlet } from "react-router";
 
+function App() {
   return (
     <>
-      <ShopPage />
+      <NavBar />
+      <main>
+        <Outlet />
+      </main>
     </>
   );
 }
