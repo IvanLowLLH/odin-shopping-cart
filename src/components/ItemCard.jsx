@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./ItemCard.module.css";
 
-function ItemCard({ itemInfo }) {
+function ItemCard({ itemInfo, onAddToCart }) {
   const [itemCount, setItemCount] = useState(0);
 
   const incrementCount = () => {
@@ -33,6 +33,7 @@ function ItemCard({ itemInfo }) {
         ></input>
         <button onClick={decrementCount}>-</button>
       </div>
+      <button onClick={onAddToCart}>Add To Cart</button>
     </div>
   );
 }
