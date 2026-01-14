@@ -17,11 +17,19 @@ function App() {
       return [...prevCart, { ...product, qty: qtyAdd }];
     });
   };
+
+  const modifyCartQty = (product, qtyChange) => {
+    setCart((prevCart) => {
+      return prevCart.map((item) =>
+        item.id === product.id ? { ...item, qty: item.qty + qtyChange } : item,
+      );
+    });
+  };
   return (
     <>
       <NavBar />
       <main>
-        <Outlet context={{ cart, addToCart }} />
+        <Outlet context={{ cart, addToCart, modifyCartQty }} />
       </main>
     </>
   );

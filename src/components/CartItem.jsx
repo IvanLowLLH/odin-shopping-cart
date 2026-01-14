@@ -1,6 +1,13 @@
 import styles from "./CartItem.module.css";
 
-export default function CartItem({ itemInfo }) {
+export default function CartItem({ itemInfo, onModify }) {
+  const incrementQty = () => {
+    onModify(itemInfo, 1);
+  };
+
+  const decrementQty = () => {
+    onModify(itemInfo, -1);
+  };
   return (
     <div className={styles["cart-item"]}>
       <div className={styles["item-info"]}>
@@ -8,14 +15,15 @@ export default function CartItem({ itemInfo }) {
         <p>${itemInfo.price}</p>
       </div>
       <div className={styles["item-btns"]}>
-        <button>+</button>
+        <button onClick={incrementQty}>+</button>
         <input
           type="text"
           inputmode="numeric"
           pattern="[0-9]*"
           value={itemInfo.qty}
+          readOnly={true}
         ></input>
-        <button>-</button>
+        <button onClick={decrementQty}>-</button>
       </div>
     </div>
   );
