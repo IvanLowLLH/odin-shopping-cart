@@ -25,11 +25,17 @@ function App() {
       );
     });
   };
+
+  const deleteCartItem = (product) => {
+    setCart((prevCart) => {
+      return prevCart.filter((item) => item.id !== product.id);
+    });
+  };
   return (
     <>
       <NavBar />
       <main>
-        <Outlet context={{ cart, addToCart, modifyCartQty }} />
+        <Outlet context={{ cart, addToCart, modifyCartQty, deleteCartItem }} />
       </main>
     </>
   );
