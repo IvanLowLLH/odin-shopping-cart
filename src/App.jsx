@@ -31,7 +31,7 @@ function App() {
   };
   return (
     <>
-      <NavBar />
+      <NavBar cart={cart} />
       <main>
         <Outlet context={{ cart, addToCart, modifyCartQty, deleteCartItem }} />
       </main>
