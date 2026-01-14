@@ -19,17 +19,15 @@ function App() {
   };
 
   const modifyCartQty = (product, qtyChange) => {
-    setCart((prevCart) => {
-      return prevCart.map((item) =>
+    setCart((prevCart) =>
+      prevCart.map((item) =>
         item.id === product.id ? { ...item, qty: item.qty + qtyChange } : item,
-      );
-    });
+      ),
+    );
   };
 
   const deleteCartItem = (product) => {
-    setCart((prevCart) => {
-      return prevCart.filter((item) => item.id !== product.id);
-    });
+    setCart((prevCart) => prevCart.filter((item) => item.id !== product.id));
   };
   return (
     <>
