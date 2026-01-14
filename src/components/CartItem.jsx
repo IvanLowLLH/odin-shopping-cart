@@ -6,6 +6,9 @@ export default function CartItem({ itemInfo, onModify, onDelete }) {
   };
 
   const decrementQty = () => {
+    if (itemInfo.qty == 1) {
+      return onDelete(itemInfo);
+    }
     onModify(itemInfo, -1);
   };
   return (
