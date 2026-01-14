@@ -3,6 +3,14 @@ import CartItem from "./CartItem";
 
 export default function Cart() {
   const { cart, modifyCartQty, deleteCartItem } = useOutletContext();
+
+  function getTotal() {
+    let sum = 0;
+    cart.forEach((item) => {
+      sum += item.price * item.qty;
+    });
+    return sum.toFixed(2);
+  }
   return (
     <div className="cart-page">
       <h1>Your Cart</h1>
@@ -20,6 +28,12 @@ export default function Cart() {
           ))}
         </div>
       )}
+      <div className="cart-footer">
+        <div className="order-summary">
+          <h1>Order Summary</h1>
+          <p>Total: ${getTotal()}</p>
+        </div>
+      </div>
     </div>
   );
 }
