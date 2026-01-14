@@ -26,7 +26,7 @@ function ItemCard({ itemInfo, onAddToCart }) {
         <button onClick={incrementCount}>+</button>
         <input
           type="text"
-          inputmode="numeric"
+          inputMode="numeric"
           pattern="[0-9]*"
           value={itemCount}
           onChange={(e) => setItemCount(Number(e.target.value))}
