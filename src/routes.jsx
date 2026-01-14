@@ -3,7 +3,7 @@ import ShopPage from "./components/Shop";
 import Cart from "./components/Cart";
 import App from "./App";
 import { createBrowserRouter } from "react-router";
-const routes = [
+export const routes = [
   {
     path: "/",
     element: <App />,
