@@ -29,7 +29,7 @@ function ItemCard({ itemInfo, onAddToCart }) {
           inputmode="numeric"
           pattern="[0-9]*"
           value={itemCount}
-          onChange={(e) => setItemCount(e.target.value)}
+          onChange={(e) => setItemCount(Number(e.target.value))}
         ></input>
         <button onClick={decrementCount}>-</button>
       </div>
