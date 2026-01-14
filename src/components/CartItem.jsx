@@ -19,7 +19,7 @@ export default function CartItem({ itemInfo, onModify, onDelete }) {
           <button onClick={incrementQty}>+</button>
           <input
             type="text"
-            inputmode="numeric"
+            inputMode="numeric"
             pattern="[0-9]*"
             value={itemInfo.qty}
             readOnly={true}
